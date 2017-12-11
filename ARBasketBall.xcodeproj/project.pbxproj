@@ -13,6 +13,7 @@
 		96C7864E1FDD3B1B00E9FD08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C7864C1FDD3B1B00E9FD08 /* Main.storyboard */; };
 		96C786501FDD3B1B00E9FD08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96C7864F1FDD3B1B00E9FD08 /* Assets.xcassets */; };
 		96C786531FDD3B1B00E9FD08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C786511FDD3B1B00E9FD08 /* LaunchScreen.storyboard */; };
+		96C7865B1FDD973000E9FD08 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C7865A1FDD973000E9FD08 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		96C7864F1FDD3B1B00E9FD08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96C786521FDD3B1B00E9FD08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96C786541FDD3B1B00E9FD08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96C7865A1FDD973000E9FD08 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				96C786461FDD3B1B00E9FD08 /* AppDelegate.swift */,
 				96C786481FDD3B1B00E9FD08 /* art.scnassets */,
 				96C7864A1FDD3B1B00E9FD08 /* ViewController.swift */,
+				96C7865A1FDD973000E9FD08 /* CustomButton.swift */,
 				96C7864C1FDD3B1B00E9FD08 /* Main.storyboard */,
 				96C7864F1FDD3B1B00E9FD08 /* Assets.xcassets */,
 				96C786511FDD3B1B00E9FD08 /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 			files = (
 				96C7864B1FDD3B1B00E9FD08 /* ViewController.swift in Sources */,
 				96C786471FDD3B1B00E9FD08 /* AppDelegate.swift in Sources */,
+				96C7865B1FDD973000E9FD08 /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +283,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4MM743TR5P;
 				INFOPLIST_FILE = ARBasketBall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.vamshi.ARBasketBall;
@@ -293,6 +298,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4MM743TR5P;
 				INFOPLIST_FILE = ARBasketBall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.vamshi.ARBasketBall;

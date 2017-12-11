@@ -1,23 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A278a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BrB-h1-WRS">
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="ARBasketBall" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ScR-4g-pdJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </arscnView>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d99-GU-VRk">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </arscnView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="euw-3V-td7">
+                                <rect key="frame" x="20" y="617" width="335" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zW6-rf-YaK" customClass="CustomButton" customModule="ARBasketBall" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="105" height="30"/>
+                                        <state key="normal" title="&lt;~&gt;">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startHorizontalAction:" destination="BV1-FR-VrT" eventType="touchUpInside" id="g7j-gK-S3O"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5J2-ZD-Z3Q" customClass="CustomButton" customModule="ARBasketBall" customModuleProvider="target">
+                                        <rect key="frame" x="115" y="0.0" width="105" height="30"/>
+                                        <state key="normal" title="Stop">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="stopAllActions:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Cct-Ss-giC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBu-zT-rRl" customClass="CustomButton" customModule="ARBasketBall" customModuleProvider="target">
+                                        <rect key="frame" x="230" y="0.0" width="105" height="30"/>
+                                        <state key="normal" title="&lt;~&gt;">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startRoundAction:" destination="BV1-FR-VrT" eventType="touchUpInside" id="s9z-ya-jst"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paA-K2-OI8" customClass="CustomButton" customModule="ARBasketBall" customModuleProvider="target">
+                                <rect key="frame" x="112" y="311" width="150" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="paA-K2-OI8" secondAttribute="height" multiplier="50:15" id="KbZ-Jc-xVy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Add Hoop">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addHoopClicked:" destination="BV1-FR-VrT" eventType="touchUpInside" id="rfv-D6-K5W"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="euw-3V-td7" firstAttribute="centerX" secondItem="ScR-4g-pdJ" secondAttribute="centerX" id="1en-xz-Zmn"/>
+                            <constraint firstItem="T2H-8y-OQd" firstAttribute="bottom" secondItem="euw-3V-td7" secondAttribute="bottom" constant="20" id="3V7-Fb-juP"/>
+                            <constraint firstItem="T2H-8y-OQd" firstAttribute="trailing" secondItem="d99-GU-VRk" secondAttribute="trailing" id="6PR-8I-a1o"/>
+                            <constraint firstItem="T2H-8y-OQd" firstAttribute="trailing" secondItem="euw-3V-td7" secondAttribute="trailing" constant="20" id="LUp-K1-zPW"/>
+                            <constraint firstItem="T2H-8y-OQd" firstAttribute="bottom" secondItem="d99-GU-VRk" secondAttribute="bottom" id="W8z-i2-sN1"/>
+                            <constraint firstItem="paA-K2-OI8" firstAttribute="centerY" secondItem="ScR-4g-pdJ" secondAttribute="centerY" id="Z1G-N0-3xH"/>
+                            <constraint firstItem="euw-3V-td7" firstAttribute="leading" secondItem="T2H-8y-OQd" secondAttribute="leading" constant="20" id="duR-dO-Oar"/>
+                            <constraint firstItem="paA-K2-OI8" firstAttribute="centerX" secondItem="ScR-4g-pdJ" secondAttribute="centerX" id="mCa-0c-RLc"/>
+                            <constraint firstItem="d99-GU-VRk" firstAttribute="top" secondItem="T2H-8y-OQd" secondAttribute="top" id="mzr-ge-oHa"/>
+                            <constraint firstItem="paA-K2-OI8" firstAttribute="width" secondItem="d99-GU-VRk" secondAttribute="width" multiplier="0.4" id="qbB-5P-TdH"/>
+                            <constraint firstItem="d99-GU-VRk" firstAttribute="leading" secondItem="T2H-8y-OQd" secondAttribute="leading" id="z4G-zd-cjC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="T2H-8y-OQd"/>
+                    </view>
                     <connections>
-                        <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
+                        <outlet property="actionStackView" destination="euw-3V-td7" id="56R-zA-iov"/>
+                        <outlet property="addHoopButton" destination="paA-K2-OI8" id="wiJ-Y2-Xor"/>
+                        <outlet property="sceneView" destination="d99-GU-VRk" id="ogT-gK-haf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
