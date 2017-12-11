@@ -81,5 +81,7 @@ func registerTapGestureRecogniser(){
 
 >diffuse property of SCNMaterial deals with how light is rendered on the material and contents property deals with the actual parents of the material
     
-    <img width="454" alt="screen shot 2017-12-11 at 3 23 44 pm" src="https://user-images.githubusercontent.com/21070922/33825353-5c0ed228-de87-11e7-85ff-6890906c38c8.png">
+
+<img width="454" alt="screen shot 2017-12-11 at 3 23 44 pm" src="https://user-images.githubusercontent.com/21070922/33825353-5c0ed228-de87-11e7-85ff-6890906c38c8.png">
+
 
