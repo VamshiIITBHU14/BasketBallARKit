@@ -96,4 +96,15 @@ func horizontalAction (node:SCNNode){
         node.runAction(SCNAction.repeat(actionSequence, count: 2))
     }
  ```
+ 
+ ```
+ func roundAction(node:SCNNode){
+        let upright = SCNAction.move(by: SCNVector3(x:1, y:1, z:0), duration: 2)
+        let downright = SCNAction.move(to: SCNVector3(x:1, y:-1, z:0), duration: 2)
+        let downLeft = SCNAction.move(by: SCNVector3(x:-1, y:-1, z:0), duration: 2)
+        let upLeft = SCNAction.move(to: SCNVector3(x:-1, y:1, z:0), duration: 2)
+        let actionSequence = SCNAction.sequence([upright , downright , downLeft , upLeft])
+        node.runAction(SCNAction.repeat(actionSequence, count: 2))
+    }
+ ```
 
