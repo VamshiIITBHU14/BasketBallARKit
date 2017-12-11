@@ -38,3 +38,44 @@ func addBackboard(){
 ```
 
 <img width="462" alt="screen shot 2017-12-11 at 1 55 52 pm" src="https://user-images.githubusercontent.com/21070922/33821763-1db1e81e-de7b-11e7-8ac2-16fe006176b0.png">
+
+
+Then we add a Tap Gesture onto the SceneView to aim the ball at the basket. 
+
+```
+func registerTapGestureRecogniser(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(gesture:)))
+        sceneView.addGestureRecognizer(tap)
+    }
+    
+    @objc func handleTap(gesture:UIRotationGestureRecognizer){
+        //scene view to be accessed
+        //access the center point of the sceneview
+        guard let sceneView = gesture.view as? ARSCNView else{return}
+        guard let centerPoint = sceneView.pointOfView else{return}
+        
+        let cameraTransform = centerPoint.transform
+        let cameraLocation = SCNVector3(x:cameraTransform.m41, y: cameraTransform.m42, z:cameraTransform.m43)
+        let cameraOrientation = SCNVector3(x: -cameraTransform.m31, y: -cameraTransform.m32, z: -cameraTransform.m33)
+        let cameraPosition = SCNVector3Make(cameraLocation.x + cameraOrientation.x, cameraLocation.y + cameraOrientation.y , cameraLocation.z + cameraOrientation.z)
+        
+        let ball = SCNSphere()
+        let material = SCNMaterial()
+        material.diffuse.contents = UIImage(named:"basketballSkin.png")
+        ball.materials = [material]
+        
+        let ballNode = SCNNode(geometry:ball)
+        ballNode.position = cameraPosition
+        
+        let physcisShape = SCNPhysicsShape(geometry: ball, options: nil)
+        let physicsBody = SCNPhysicsBody(type: .dynamic, shape: physcisShape)
+        
+        ballNode.physicsBody = physicsBody
+        let forceVector:Float = 6
+        ballNode.physicsBody?.applyForce(SCNVector3(x:cameraOrientation.x * forceVector, y:cameraOrientation.y * forceVector, z: cameraOrientation.z * forceVector), asImpulse:true)
+        
+        sceneView.scene.rootNode.addChildNode(ballNode)
+        
+    }
+    ```
+    
