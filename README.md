@@ -79,5 +79,6 @@ func registerTapGestureRecogniser(){
     }
 ```
 
-diffuse property of SCNMaterial deals with how light is rendered on the material and contents property deals with the actual parents of the material
+>diffuse property of SCNMaterial deals with how light is rendered on the material and contents property deals with the actual parents of the material
+    
     
