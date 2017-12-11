@@ -84,4 +84,16 @@ func registerTapGestureRecogniser(){
 
 <img width="454" alt="screen shot 2017-12-11 at 3 23 44 pm" src="https://user-images.githubusercontent.com/21070922/33825353-5c0ed228-de87-11e7-85ff-6890906c38c8.png">
 
+Optional:
+
+Moving objects in AR Space is really straight forward. Here I am posting two methods to move the hoop in XY plane in a horizontal and circuit manner:
+
+```
+func horizontalAction (node:SCNNode){
+        let leftAction = SCNAction.move(by: SCNVector3(x:-1, y:0, z:0), duration: 2)
+        let rightAction = SCNAction.move(to: SCNVector3(x:1, y:0, z:0), duration: 2)
+        let actionSequence = SCNAction.sequence([leftAction , rightAction])
+        node.runAction(SCNAction.repeat(actionSequence, count: 2))
+    }
+ ```
 
